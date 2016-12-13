@@ -50,6 +50,7 @@ var start = Date.now();
 pipedrive.on('deal.added', function(event, data) {
 	console.log('Deal ' + event.meta.id + ' was added (' + data.current.title + ', worth ' + data.current.value + ' ' + data.current.currency + ')');
 	pipedrive.removeAllListeners();
+	console.log(pipedrive.getCapturedRequests());
 	process.exit();
 });
 
